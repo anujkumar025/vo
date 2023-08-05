@@ -1,0 +1,38 @@
+.main{
+    position:absolute;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+    box-sizing: border-box;
+}
+
+.left{
+    background-color: coral;
+    border: 1px solid black;
+    position: relative;
+    margin: 10px;
+    height: 20vh;
+    top: 25vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.button1{
+    position: relative;
+    height: 40%;
+    top: 30%;
+}
+
+.right{
+    position:relative;
+    left: 10px;
+    border: 1px solid black;
+    margin: 20px 0;
+    width: 40%;
+    height: 65vh;
+}
