@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-
+//adding this comment to check
 const db = mysql.createPool({
     host: "localhost", 
     user:"root",
