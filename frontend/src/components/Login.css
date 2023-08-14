@@ -55,6 +55,7 @@
     cursor: pointer;
 }
 
-Link{
-    color: white;
+.ar{
+    text-decoration: none;
+    color:white;
 }

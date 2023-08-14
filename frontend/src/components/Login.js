@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './Login.css';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 
 import axios from 'axios';
@@ -60,7 +60,7 @@ const Login = () => {
                         Login
                     </button>
                     <button className='registerButton'>
-                        <Link to="/register">Register</Link>
+                        <a className='ar' href="/register">Register</a>
                     </button>
                 </div>
             </div>
