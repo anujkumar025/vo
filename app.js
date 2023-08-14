@@ -40,6 +40,19 @@ app.post("/register", (req, res) => {
         }
     })
 });
+app.post("/login", (req, res) => {
+    const {email, password} = req.body;
+    const sql = "select username from user where email=? && password=?";
+    db.query(sql, [email, password], (err, result) => {
+        if(err) console.log(err);
+        else if(result.length === 0){
+            res.send({message : "User not Registered!"});
+        }
+        else{
+            res.send({message : result});
+        }
+    })
+});
 
 app.listen(PORT, ()=>{
     console.log("started at port 5000");

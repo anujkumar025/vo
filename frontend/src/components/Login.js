@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import './Login.css';
+import { LoginContext } from '../context/LoginContext';
 // import {Link} from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
 
 import axios from 'axios';
 
 const Login = () => {
+    const {setUserName} = useContext(LoginContext);
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,10 +24,15 @@ const Login = () => {
         // console.log("email : ", email, "password : ", password);
         if(email && password){
             const user = {email, password};
-            axios.post("http://localhost:5000/register", user)
+            axios.post("http://localhost:5000/login", user)
             .then(res => {
-                alert(res.data.message);
-                navigate('/');
+                if(res.data.message === "User not Registered!"){
+                alert(res.data.message);}
+                else{   
+                    setUserName(res.data.message[0].username);
+                    // alert(userName);
+                    navigate('/');
+                }
             })
         }
         else{

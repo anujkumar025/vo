@@ -5,8 +5,8 @@ const Home = () =>{
     return(
         <div className='main'>
             <div className='left'>
-                <button className='button1 button12'>Create Quiz</button>
-                <button className='button1 button22'>Participate in public Quiz</button>
+                <button className='button1 button12'><a href='/createquiz'>Create Quiz</a></button>
+                <button className='button1 button22'><a href='/participate'>Participate in Quiz</a></button>
             </div>
             <div className='right'>
 
