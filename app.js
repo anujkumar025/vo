@@ -54,6 +54,18 @@ app.post("/login", (req, res) => {
     })
 });
 
+app.post("/", (res, req) => {
+    const {email} = req.body;
+})
+
+// const q1 = "INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `registration_date`) VALUES (?, ?, ?, ?, ?)";
+app.post("/createquiz", (res, req) =>{
+    const {title, description, date} = req.body;
+    const sql = "INSERT INTO 'quiz' ('quiz_id', 'quiz_title', 'description', 'creator', 'creation_date', 'deadline', 'accesibility') VALUES (?, ?, ?, ?, ?, ?, ?);";
+    const sqlToFindUser = "Select user_id from user where ";
+    db.query(sql, [null, title, description, ])
+})
+
 app.listen(PORT, ()=>{
     console.log("started at port 5000");
 })

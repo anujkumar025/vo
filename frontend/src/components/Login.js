@@ -3,7 +3,6 @@ import './Login.css';
 import { LoginContext } from '../context/LoginContext';
 // import {Link} from "react-router-dom";
 import {useNavigate} from 'react-router-dom';
-
 import axios from 'axios';
 
 const Login = () => {
@@ -27,7 +26,7 @@ const Login = () => {
             axios.post("http://localhost:5000/login", user)
             .then(res => {
                 if(res.data.message === "User not Registered!"){
-                alert(res.data.message);}
+                alert(res.data.message);}  
                 else{   
                     setUserName(res.data.message[0].username);
                     // alert(userName);
